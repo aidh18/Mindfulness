@@ -18,8 +18,8 @@ namespace Mindfulness
             int repetitions = (GetTimeLimit() / 10) + 1;
             for (int i = 0; i < repetitions; i++)
             {
-                UseTimer().Time("Breathe in...", 6);
-                UseTimer().Time("Breathe out...", 4);
+                UseTimer().DisplayCountdown("Breathe in...", 6);
+                UseTimer().DisplayCountdown("Breathe out...", 4);
             }
         }
     }

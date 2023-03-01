@@ -31,9 +31,9 @@ namespace Mindfulness
         public void DoWelcome()
         {
             Console.WriteLine($"Welcome to the {_name}.\n");
-            _timer.Time(3);
+            _timer.Count(3);
             Console.WriteLine($"{_description}\n");
-            _timer.Time(3);
+            _timer.Count(3);
 
             Console.Write("How long, in seconds, would you like for your session? ");
             _timeLimit = Int32.Parse(Console.ReadLine());

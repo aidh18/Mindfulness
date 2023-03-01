@@ -7,7 +7,7 @@ namespace Mindfulness
     public class Timer
     {
         
-        private List<string> _lines = new List<string>()
+        private List<string> _animation = new List<string>()
             {" = >>---> ", "  = >>--->", "   = >>---", "    = >>--", "     = >>-", 
             "      = >>", "       = >", "        = ", "         =", "          ",
             "          ", "          ", ">         ", "->        ", "-->       ",
@@ -36,36 +36,36 @@ namespace Mindfulness
 
             for (int i = 0; i < seconds; i++)
             {    
-                foreach (string line in _lines)
+                foreach (string frame in _animation)
                 {
-                    Console.Write(line);
+                    Console.Write(frame);
                     Thread.Sleep(50);
                     Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
                 }
             }
         }
         
-        public void Pause(string message, int seconds)
+        public void DisplayAnimation(string message, int seconds)
         {
             Console.WriteLine($"{message}");
             
             for (int i = 0; i < seconds; i++)
             {    
-                foreach (string line in _lines)
+                foreach (string frame in _animation)
                 {
-                    Console.Write(line);
+                    Console.Write(frame);
                     Thread.Sleep(50);
                     Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
                 }
             }
         }
 
-        public void Time(int seconds)
+        public void Count(int seconds)
         {
             Thread.Sleep(seconds * 1000);
         }
 
-        public void Time(string message, int seconds)
+        public void DisplayCountdown(string message, int seconds)
         {
             Console.Write($"{message} {seconds}");
             Thread.Sleep(1000);

@@ -22,7 +22,7 @@ namespace Mindfulness
         public override void Start()
         {
             DisplayPrompt();
-            UseTimer().Time("You may begin in", 5);
+            UseTimer().DisplayCountdown("You may begin in", 5);
             CountUserResponse();
         }
 
@@ -38,7 +38,7 @@ namespace Mindfulness
                 items++;
             }
 
-            UseTimer().Pause($"You listed {items} items!", 5);
+            UseTimer().DisplayAnimation($"You listed {items} items!", 5);
         }
 
         private void DisplayPrompt()

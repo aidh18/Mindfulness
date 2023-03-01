@@ -33,7 +33,7 @@ namespace Mindfulness
             DisplayPrompt();
 
             Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-            UseTimer().Time("You may begin in", 5);
+            UseTimer().DisplayCountdown("You may begin in", 5);
             
             DisplayQuestions();
         }
@@ -52,7 +52,7 @@ namespace Mindfulness
             int numberOfQuestions = (GetTimeLimit() / 10) + 1;
             for (int i = 0; i < numberOfQuestions; i++)
             {
-                UseTimer().Pause("> " +_questions[_random.Next(_questions.Count)], 10);
+                UseTimer().DisplayAnimation("> " +_questions[_random.Next(_questions.Count)], 10);
             }
         }
     }
